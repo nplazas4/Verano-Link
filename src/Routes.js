@@ -12,14 +12,14 @@ import Config from './pages/Config';
 const Routes = () => {
     return(
         <Switch>
-            <Route exact path='/' component={Login}/>
-            <Route path='/proveedores' component={Providers}/>
-            <Route path='/interfaces' component={Interfaces}/>
-            <Route path='/flujos-negocio' component={Businessflow}/>
-            <Route path='/monitoreo' component={Dashboard}/>
-            <Route path='/usuarios' component={Users}/>
-            <Route path='/auditoria' component={Audit}/>
-            <Route path='/configuracion' component={Config}/>
+            <Route exact path='/veranolink' component={Login}/>
+            <Route exact path='/veranolink/proveedores' component={Providers}/>
+            <Route path='/veranolink/interfaces' component={Interfaces}/>
+            <Route path='/veranolink/flujos-negocio' component={Businessflow}/>
+            <Route path='/veranolink/monitoreo' component={Dashboard}/>
+            <Route path='/veranolink/usuarios' component={Users}/>
+            <Route path='/veranolink/auditoria' component={Audit}/>
+            <Route path='/veranolink/configuracion' component={Config}/>
         </Switch>
     );
 }

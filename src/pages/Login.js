@@ -57,7 +57,7 @@ const divInput = (
 const divBtn = (
     <div className="input-field">
         <div className="tc">
-            <a id='btn-init' className="btn waves-effect waves-light" href="/proveedores">
+            <a id='btn-init' className="btn waves-effect waves-light" href="veranolink/proveedores">
                 INICIAR SESIÓN
             </a>
         </div>
