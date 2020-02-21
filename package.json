@@ -1,7 +1,7 @@
 {
   "name": "verano-link",
   "version": "0.1.0",
-  "homepage" : "http://nplazas4.github.io/verano-link",
+  "homepage": "http://cloudverano.com.co:4000/veranolink",
   "private": true,
   "dependencies": {
     "@amcharts/amcharts4": "^4.9.1",
