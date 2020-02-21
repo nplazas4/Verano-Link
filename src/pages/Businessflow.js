@@ -1,50 +1,67 @@
-import React, { Component } from 'react';
-import Header from '../components/Header';
+import React, { Component } from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import BussinessFlowContainer from "../components/BusinessFlowContainer";
 
-class Businessflow extends Component{
-    render(){
-        return(
-            <div>
-                <section className="col l10 m12 s12 offset-l2 relative">
-                    <Header/>
-                    {/* contenedor */}
-                    <div className="container-page">
-                        <div className="row">
-                            <div className="col l12 m12 s12">
-                                <div className="row">
-                                    <div className="col l9">
-                                        Lista de flujos de Negocio
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col l3 m6 s6 item-card">
-                                <div className="card-module user-no-sel card-color1">
-                                    <div className="cont-icon"></div>
-                                    <div className="cont-base-info">
-                                        <div className="title2">Get EPS</div>
-                                        <div className="relative">
-                                            <div className="divisor-line"></div>
-                                        </div>
-                                        <div className="tc mt-3 p8" style={{color:'rgba(0,0,0,0.6)',letterSpacing: 1+"pt"}}>
-                                            HERRAMIENTA
-                                        </div>
-                                        <div className="tc mb-3">P6 EPPM</div>
-                                        <hr></hr>
-                                        <div className="tc mt-3 p8" style={{color:'rgba(0,0,0,0.6)',letterSpacing: 1+"pt"}}>
-                                            DESCRIPCIÓN
-                                        </div>
-                                        <div className="tc mb-3">
-                                            - - - - - 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+class Businessflow extends Component {
+  render() {
+    const flowList = [
+      {
+        name: "GET EPS",
+        tool: "P6 EPPM",
+        description: "- - - - -",
+        lineColor: "card-color1"
+      },
+      {
+        name: "GET ACTIVITY",
+        tool: "P6 EPPM",
+        description: "- - - - -",
+        lineColor: "card-color2"
+      },
+      {
+        name: "GET PROJECT",
+        tool: "P6 EPPM",
+        description: "- - - - -",
+        lineColor: "card-color3"
+      },
+      {
+        name: "GET CBS",
+        tool: "P6 EPPM",
+        description: "- - - - -",
+        lineColor: "card-color4"
+      }
+    ];
+    const flowLoop = flowList.map((businessflow, index) => {
+      return (
+        <BussinessFlowContainer
+          name={businessflow.name}
+          tool={businessflow.tool}
+          description={businessflow.description}
+          color={businessflow.lineColor}
+        />
+      );
+    });
+    return (
+      <div>
+        <section className="col l10 m12 s12 offset-l2 relative">
+          <Header title="Flujo de negocio" urlContext="flujos-negocio" />
+          {/* contenedor */}
+          <div className="container-page">
+            <div className="row">
+              <div className="col l12 m12 s12">
+                <div className="row">
+                  <div className="col l9">Lista de flujos de Negocio</div>
+                </div>
+              </div>
+              {/* Contenedor de flujos de negocio */}
+              {flowLoop}
             </div>
-        )
-    }
+          </div>
+          <Footer />
+        </section>
+      </div>
+    );
+  }
 }
 
 export default Businessflow;
