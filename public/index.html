@@ -10,6 +10,7 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -32,16 +33,15 @@
     />
   </head>
   <body>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--Script que tiene la funcionalidad de iniciar los componentes pertenecientes a materialize (modal, tooltips, etc). -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        M.AutoInit();
+      });
+    </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root">
-      <!-- Compiled and minified JavaScript -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-      <!--Script que tiene la funcionalidad de iniciar los componentes pertenecientes a materialize (modal, tooltips, etc). -->
-      <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          M.AutoInit();
-        });
-      </script>
-    </div>
+    <div id="root"></div>
   </body>
 </html>
