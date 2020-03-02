@@ -7,7 +7,7 @@ import M from "materialize-css";
 
 am4core.useTheme(am4themes_animated);
 
-class Dashboard extends Component {
+class ExitososFallidos extends Component {
   componentDidMount() {
     M.AutoInit();
     this.buldCharts();
@@ -97,4 +97,4 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+export default ExitososFallidos;
