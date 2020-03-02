@@ -56,11 +56,11 @@ class Dashboard extends Component {
                     <a className="not-link-style" href="#!">
                       <div className="kpi-card">
                         <div className="value-kpi t-light">
-                          {/* {this.state.loading === true ? (
+                          {this.state.loading === true ? (
                             <Skeleton width={35 + "%"} />
-                          ) : ( */}
-                          34
-                          {/* )} */}
+                          ) : (
+                            34
+                          )}
                         </div>
                         <div className="cont-title-kpi">
                           <div className="title-kpi t-semibold">
@@ -77,12 +77,11 @@ class Dashboard extends Component {
                     <a href="#!" className="not-link-style">
                       <div className="kpi-card">
                         <div className="value-kpi t-light">
-                          {/* {this.state.loading === true ? (
+                          {this.state.loading === true ? (
                             <Skeleton width={35 + "%"} />
                           ) : (
                             "102"
-                          )} */}
-                          102
+                          )}
                         </div>
                         <div className="cont-title-kpi">
                           <div className="title-kpi t-semibold">
@@ -99,11 +98,11 @@ class Dashboard extends Component {
                     <a href="#!" className="not-link-style">
                       <div className="kpi-card">
                         <div className="value-kpi t-light">
-                          {/* {this.state.loading === true ? (
+                          {this.state.loading === true ? (
                             <Skeleton width={35 + "%"} />
-                          ) : ( */}
-                          54
-                          {/* )} */}
+                          ) : (
+                            54
+                          )}
                         </div>
                         <div className="cont-title-kpi">
                           <div className="title-kpi t-semibold">
@@ -120,7 +119,11 @@ class Dashboard extends Component {
                     <a href="#!" className="not-link-style">
                       <div className="kpi-card">
                         <div className="value-kpi t-light">
-                          9{/* <Skeleton width={35 + "%"} /> */}
+                          {this.state.loading === true ? (
+                            <Skeleton width={35 + "%"} />
+                          ) : (
+                            9
+                          )}
                         </div>
                         <div className="cont-title-kpi">
                           <div className="title-kpi t-semibold">Interfaces</div>
@@ -150,11 +153,11 @@ class Dashboard extends Component {
                           </select>
                         </div>
                       </div>
-                      {/* {this.state.loading === true ? (
+                      {this.state.loading === true ? (
                         <Skeleton width={100 + "%"} height={270 + "px"} />
-                      ) : ( */}
-                      <TransInterfaz id="1" />
-                      {/* )} */}
+                      ) : (
+                        <TransInterfaz id="1" />
+                      )}
                     </div>
                   </div>
                   <div className="col xl3 l6 m6 s12">
@@ -189,11 +192,11 @@ class Dashboard extends Component {
                           </select>
                         </div>
                       </div>
-                      {/* {this.state.loading === true ? (
+                      {this.state.loading === true ? (
                         <Skeleton width={100 + "%"} height={270 + "px"} />
-                      ) : ( */}
-                      <TransInterfaz id="2" />
-                      {/* )} */}
+                      ) : (
+                        <TransInterfaz id="2" />
+                      )}
                     </div>
                   </div>
                   <div className="col l6 m12 s12">
@@ -213,11 +216,11 @@ class Dashboard extends Component {
                           </select>
                         </div>
                       </div>
-                      {/* {this.state.loading === true ? (
+                      {this.state.loading === true ? (
                         <Skeleton width={100 + "%"} height={270 + "px"} />
-                      ) : ( */}
-                      <TransInterfaz id="3" />
-                      {/* )} */}
+                      ) : (
+                        <TransInterfaz id="3" />
+                      )}
                     </div>
                   </div>
                 </div>
