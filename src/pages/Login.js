@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import logo from "../images/verano-logo.png";
 import Input from "../components/form/Input";
 import I_TAG from "../components/text/I-tag";
+import { Link } from "react-router-dom";
+import M from "materialize-css";
 
 const inputStyle = {
   display: "block"
@@ -72,13 +74,13 @@ const divInput = (
 const divBtn = (
   <div className="input-field">
     <div className="tc">
-      <a
+      <Link
         id="btn-init"
         className="btn waves-effect waves-light"
-        href="/veranolink/proveedores"
+        to="/veranolink/proveedores"
       >
         INICIAR SESIÓN
-      </a>
+      </Link>
     </div>
     <div className="tc mt-2">
       <a
@@ -96,9 +98,9 @@ const modalLogin = (
   <div id="modalForgotPassword" className="modal s12">
     <div className="modal-content">
       <div className="tc title-1">Olvidaste la Contraseña</div>
-      <a href="#!" className="close-window modal-close">
+      <Link to="#!" className="close-window modal-close">
         <I_TAG class="fas fa-times" />
-      </a>
+      </Link>
       <div className="mb-3 tc">Confirma tu dirección de email.</div>
       <form>
         <div className="input-field" style={inputEmailModal}>
@@ -114,18 +116,21 @@ const modalLogin = (
       <div className="p9 t-semibold">Los campos con (*) son obligatorios.</div>
     </div>
     <div className="modal-footer tc">
-      <a
-        href="#!"
+      <Link
+        to="#!"
         className=" modal-action modal-close btn waves-effect waves-light t-semibold"
       >
         Recuperar contraseña
-      </a>
+      </Link>
     </div>
   </div>
 );
 
 // Clase que contiene la interfaz de login
 class Login extends Component {
+  componentDidMount() {
+    M.AutoInit();
+  }
   render() {
     return (
       <div>

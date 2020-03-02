@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import M from "materialize-css";
 
 class Users extends Component {
+  componentDidMount() {
+    M.AutoInit();
+  }
   render() {
     return (
       <div>

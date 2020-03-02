@@ -9,95 +9,127 @@ import Pagination from "../components/Pagination";
 import InterfaceModalFilter from "../components/InterfaceModalFilter";
 import MobileFilter from "../components/MobileFilters";
 import InterfaceNewProg from "../components/InterfaceNewProg";
+import M from "materialize-css";
 
 class Interfaces extends Component {
-  render() {
-    const InterfacesList = [
-      {
-        name: "Migración P6",
-        status: "Ejecución Exitosa",
-        origin: "P6 EPPM",
-        destiny: "SAP",
-        ejecTime: "2 Minutos",
-        businessFlow: "---"
-      },
-      {
-        name: "Creación EPS",
-        status: "Ejecución Exitosa",
-        origin: "P6 EPPM",
-        destiny: "SAP",
-        ejecTime: "2 Minutos",
-        businessFlow: "Get EPS"
-      },
-      {
-        name: "Creación Actividades",
-        status: "Ejecución Exitosa",
-        origin: "P6 EPPM",
-        destiny: "SAP",
-        ejecTime: "2 Minutos",
-        businessFlow: "Get Activities"
-      },
-      {
-        name: "Creación OBS",
-        status: "Ejecución Exitosa",
-        origin: "P6 EPPM",
-        destiny: "SAP",
-        ejecTime: "2 Minutos",
-        businessFlow: "Get OBS"
-      },
-      {
-        name: "Creación De Calendarios",
-        status: "Ejecución Exitosa",
-        origin: "P6 EPPM",
-        destiny: "SAP",
-        ejecTime: "2 Minutos",
-        businessFlow: "Get Calendars"
-      },
-      {
-        name: "Creación Códigos De Proyecto",
-        status: "Ejecución Exitosa",
-        origin: "P6 EPPM",
-        destiny: "SAP",
-        ejecTime: "2 Minutos",
-        businessFlow: "Get Project Code"
-      },
-      {
-        name: "Obtener Estructura De Costos",
-        status: "Ejecución Exitosa",
-        origin: "P6 EPPM",
-        destiny: "SAP",
-        ejecTime: "2 Minutos",
-        businessFlow: "Get Project Costsheet"
-      },
-      {
-        name: "Obtener Registros De BP",
-        status: "Ejecución Exitosa",
-        origin: "P6 EPPM",
-        destiny: "SAP",
-        ejecTime: "2 Minutos",
-        businessFlow: "Get BP Records"
-      },
-      {
-        name: "Obtener Registros De BP",
-        status: "Ejecución Exitosa",
-        origin: "P6 EPPM",
-        destiny: "SAP",
-        ejecTime: "2 Minutos",
-        businessFlow: "Get BP Records Documents"
+  state = {
+    loading: true,
+    error: null,
+    data: undefined
+  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true,
+      error: null,
+      list: {
+        results: [
+          {
+            id: "1",
+            name: "Migración P6",
+            status: "Ejecución Exitosa",
+            origin: "P6 EPPM",
+            destiny: "SAP",
+            ejecTime: "2 Minutos",
+            businessFlow: "---"
+          },
+          {
+            id: "2",
+            name: "Creación EPS",
+            status: "Ejecución Exitosa",
+            origin: "P6 EPPM",
+            destiny: "SAP",
+            ejecTime: "2 Minutos",
+            businessFlow: "Get EPS"
+          },
+          {
+            id: "3",
+            name: "Creación Actividades",
+            status: "Ejecución Exitosa",
+            origin: "P6 EPPM",
+            destiny: "SAP",
+            ejecTime: "2 Minutos",
+            businessFlow: "Get Activities"
+          },
+          {
+            id: "4",
+            name: "Creación OBS",
+            status: "Ejecución Exitosa",
+            origin: "P6 EPPM",
+            destiny: "SAP",
+            ejecTime: "2 Minutos",
+            businessFlow: "Get OBS"
+          },
+          {
+            id: "5",
+            name: "Creación De Calendarios",
+            status: "Ejecución Exitosa",
+            origin: "P6 EPPM",
+            destiny: "SAP",
+            ejecTime: "2 Minutos",
+            businessFlow: "Get Calendars"
+          },
+          {
+            id: "6",
+            name: "Creación Códigos De Proyecto",
+            status: "Ejecución Exitosa",
+            origin: "P6 EPPM",
+            destiny: "SAP",
+            ejecTime: "2 Minutos",
+            businessFlow: "Get Project Code"
+          },
+          {
+            id: "7",
+            name: "Obtener Estructura De Costos",
+            status: "Ejecución Exitosa",
+            origin: "P6 EPPM",
+            destiny: "SAP",
+            ejecTime: "2 Minutos",
+            businessFlow: "Get Project Costsheet"
+          },
+          {
+            id: "8",
+            name: "Obtener Registros De BP",
+            status: "Ejecución Exitosa",
+            origin: "P6 EPPM",
+            destiny: "SAP",
+            ejecTime: "2 Minutos",
+            businessFlow: "Get BP Records"
+          },
+          {
+            id: "9",
+            name: "Obtener Registros De BP",
+            status: "Ejecución Exitosa",
+            origin: "P6 EPPM",
+            destiny: "SAP",
+            ejecTime: "2 Minutos",
+            businessFlow: "Get BP Records Documents"
+          }
+        ]
       }
-    ];
-    const interfacesLoop = InterfacesList.map((interfaces, index) => {
-      return (
-        <InterfaceContainer
-          name={interfaces.name}
-          status={interfaces.status}
-          origin={interfaces.origin}
-          destiny={interfaces.destiny}
-          ejecTime={interfaces.ejecTime}
-          businessFlow={interfaces.businessFlow}
-        />
-      );
-    });
+    };
+  }
+  componentDidMount() {
+    M.AutoInit();
+    this.fetchCharacters();
+  }
+  fetchCharacters = async () => {
+    this.setState({ loading: true, error: null });
+    try {
+      const data = await fetch("https://www.breakingbadapi.com/api/characters");
+      const response = await data.json();
+      console.log(response);
+      this.setState({
+        loading: false
+      });
+    } catch (error) {
+      this.setState({
+        loading: false,
+        error: error
+      });
+    }
+  };
+  render() {
     return (
       <div>
         <Navbar />
@@ -140,7 +172,16 @@ class Interfaces extends Component {
                 <div className="col l9 m8 s12">
                   <div className="row">
                     {/* Contenedor de las interfaces */}
-                    {interfacesLoop}
+                    {this.state.loading === true ? (
+                      <InterfaceContainer
+                        interfaces={this.state.list.results}
+                        skeleton="true"
+                      />
+                    ) : (
+                      <InterfaceContainer
+                        interfaces={this.state.list.results}
+                      />
+                    )}
                   </div>
                 </div>
                 <FilterPanel />

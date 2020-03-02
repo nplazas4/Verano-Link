@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const exitOption = {
   borderTop: "1px solid #ddd",
@@ -10,7 +11,7 @@ class menuContent extends React.Component {
   render() {
     return (
       <div style={{ margin: 0 }}>
-        <a href="/veranolink/proveedores" className="element-nav">
+        <Link className="element-nav" to="/veranolink/proveedores">
           <div
             className="cont-icon tooltipped"
             data-position="right"
@@ -19,8 +20,8 @@ class menuContent extends React.Component {
             <i className="fas fa-dolly-flatbed"></i>
           </div>
           <div className="cont-label">Proveedores</div>
-        </a>
-        <a href="/veranolink/interfaces" className="element-nav">
+        </Link>
+        <Link className="element-nav" to="/veranolink/interfaces">
           <div
             className="cont-icon tooltipped"
             data-position="right"
@@ -29,8 +30,8 @@ class menuContent extends React.Component {
             <i className="fas fa-th-large"></i>
           </div>
           <div className="cont-label">Interfaces</div>
-        </a>
-        <a href="/veranolink/flujos-negocio" className="element-nav">
+        </Link>
+        <Link className="element-nav" to="/veranolink/flujos-negocio">
           <div
             className="cont-icon tooltipped"
             data-position="right"
@@ -39,8 +40,8 @@ class menuContent extends React.Component {
             <i className="fas fa-landmark"></i>
           </div>
           <div className="cont-label">Flujos Negocio</div>
-        </a>
-        <a href="/veranolink/monitoreo" className="element-nav">
+        </Link>
+        <Link className="element-nav" to="/veranolink/monitoreo">
           <div
             className="cont-icon tooltipped"
             data-position="right"
@@ -49,8 +50,8 @@ class menuContent extends React.Component {
             <i className="fas fa-chart-line"></i>
           </div>
           <div className="cont-label">Monitoreo</div>
-        </a>
-        <a href="/veranolink/usuarios" className="element-nav">
+        </Link>
+        <Link className="element-nav" to="/veranolink/usuarios">
           <div
             className="cont-icon tooltipped"
             data-position="right"
@@ -59,8 +60,8 @@ class menuContent extends React.Component {
             <i className="fas fa-user-friends"></i>
           </div>
           <div className="cont-label">Usuarios</div>
-        </a>
-        <a href="/veranolink/auditoria" className="element-nav">
+        </Link>
+        <Link className="element-nav" to="/veranolink/auditoria">
           <div
             className="cont-icon tooltipped"
             data-position="right"
@@ -69,8 +70,8 @@ class menuContent extends React.Component {
             <i className="far fa-file-alt"></i>
           </div>
           <div className="cont-label">Auditoria</div>
-        </a>
-        <a href="/veranolink/configuracion" className="element-nav">
+        </Link>
+        <Link className="element-nav" to="/veranolink/configuracion">
           <div
             className="cont-icon tooltipped"
             data-position="right"
@@ -79,9 +80,9 @@ class menuContent extends React.Component {
             <i className="fas fa-cog"></i>
           </div>
           <div className="cont-label">Configuración</div>
-        </a>
+        </Link>
         <div className="space-bar"></div>
-        <a href="/veranolink" className="element-nav" style={exitOption}>
+        <Link className="element-nav" style={exitOption} to="/veranolink">
           <div
             className="cont-icon tooltipped"
             data-position="right"
@@ -90,7 +91,7 @@ class menuContent extends React.Component {
             <i className="fas fa-power-off"></i>
           </div>
           <div className="cont-label">Salir</div>
-        </a>
+        </Link>
       </div>
     );
   }

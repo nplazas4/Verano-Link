@@ -1,6 +1,10 @@
 import React, { Component } from "react";
+import M from "materialize-css";
 
 class FilterPanel extends Component {
+  componentDidMount() {
+    M.AutoInit();
+  }
   render() {
     return (
       <div className="col l3 m4 s12">

@@ -8,18 +8,32 @@ import Dashboard from "./pages/Dashboard";
 import Users from "./pages/Users";
 import Audit from "./pages/Audit";
 import Config from "./pages/Config";
+import Layout from "./components/Layout";
+import Layout2 from "./components/Layout2";
 
 const Routes = () => {
   return (
     <Switch>
-      <Route exact path="/veranolink" component={Login} />
-      <Route exact path="/veranolink/proveedores" component={Providers} />
-      <Route path="/veranolink/interfaces" component={Interfaces} />
-      <Route path="/veranolink/flujos-negocio" component={Businessflow} />
-      <Route path="/veranolink/monitoreo" component={Dashboard} />
-      <Route path="/veranolink/usuarios" component={Users} />
-      <Route path="/veranolink/auditoria" component={Audit} />
-      <Route path="/veranolink/configuracion" component={Config} />
+      <React.Fragment>
+        <Route exact path="/veranolink" component={Login} />
+        {/* <Layout> */}
+        {/* <section className="col l10 m12 s12  offset-l2 relative">
+          // <Layout2> */}
+        <Route exact path="/veranolink/proveedores" component={Providers} />
+        <Route exact path="/veranolink/interfaces" component={Interfaces} />
+        <Route
+          exact
+          path="/veranolink/flujos-negocio"
+          component={Businessflow}
+        />
+        <Route exact path="/veranolink/monitoreo" component={Dashboard} />
+        <Route exact path="/veranolink/usuarios" component={Users} />
+        <Route exact path="/veranolink/auditoria" component={Audit} />
+        <Route exact path="/veranolink/configuracion" component={Config} />
+        {/* </Layout2>
+        </section> */}
+      </React.Fragment>
+      {/* </Layout> */}
     </Switch>
   );
 };

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Header extends Component {
   render() {
@@ -9,22 +10,22 @@ class Header extends Component {
             <div className="element-big-title">
               <div className="cont-btn-return">
                 {" "}
-                <a href="/veranolink/proveedores">
+                <Link to="/veranolink/proveedores">
                   <div className="btn-return">
                     <i className="p10 fas fa-chevron-left"></i>
                   </div>
-                </a>
+                </Link>
               </div>
               <div className="big-title">
                 <div className="subtitle-header">Módulo</div>
                 <div className="title-header">
-                  <a href="/veranolink/proveedores">Verano-Link</a>
-                  <a
-                    href={"/veranolink/" + this.props.urlContext.toLowerCase()}
+                  <Link to="/veranolink/proveedores">Verano-Link</Link>
+                  <Link
+                    to={"/veranolink/" + this.props.urlContext.toLowerCase()}
                     className="p14 inner-level"
                   >
                     / {this.props.title}
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
