@@ -117,7 +117,7 @@ class InterfaceContainer extends Component {
                         {this.props.skeleton ? (
                           <Skeleton width={50 + "%"} />
                         ) : (
-                          "interfaz.destiny"
+                          interfaz.destiny
                         )}
                       </div>
                     </div>
