@@ -7,7 +7,10 @@ import TransInterfaz from "../components/charts/TransInterfaz";
 import M from "materialize-css";
 
 class Dashboard extends Component {
-  state = {};
+  state = {
+    loading: true,
+    error: null
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -30,11 +33,9 @@ class Dashboard extends Component {
         "https://www.breakingbadapi.com/api/characters"
       );
       const data = await response.json();
-      console.log(data);
       this.setState({
         loading: false
       });
-      this.fetchDashboards();
     } catch (error) {
       this.setState({
         loading: false,
