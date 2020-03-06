@@ -1,12 +1,18 @@
 import React from "react";
 import Routes from "../Routes";
 import Menu from "./Menu";
+import { withRouter } from "react-router-dom";
 import M from "materialize-css/dist/js/materialize";
 
-document.addEventListener("DOMContentLoaded", function() {
-  M.AutoInit();
-});
 class App extends React.Component {
+  componentDidMount() {
+    M.AutoInit();
+  }
+  componentDidUpdate(prevProps) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      M.AutoInit();
+    }
+  }
   render() {
     return (
       <div className="App">
@@ -34,4 +40,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withRouter(props => <App {...props} />);
