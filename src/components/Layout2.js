@@ -6,7 +6,7 @@ function Layout2(props) {
   return (
     <React.Fragment>
       {console.log(props.test)}
-      <Header />
+
       {props.children}
     </React.Fragment>
   );

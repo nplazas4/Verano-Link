@@ -3,7 +3,7 @@ import logo from "../images/verano-logo.png";
 import Input from "../components/form/Input";
 import I_TAG from "../components/text/I-tag";
 import { Link } from "react-router-dom";
-import M from "materialize-css";
+import ForgotPassModal from "../components/ForgotPassModal";
 
 const inputStyle = {
   display: "block"
@@ -11,10 +11,6 @@ const inputStyle = {
 
 const unlockStyle = {
   marginRight: "10px"
-};
-
-const inputEmailModal = {
-  marginTop: "2em"
 };
 
 let toggle = true;
@@ -93,44 +89,9 @@ const divBtn = (
     </div>
   </div>
 );
-// Constante que contiene el modal de recuperar contraseña.
-const modalLogin = (
-  <div id="modalForgotPassword" className="modal s12">
-    <div className="modal-content">
-      <div className="tc title-1">Olvidaste la Contraseña</div>
-      <Link to="#!" className="close-window modal-close">
-        <I_TAG class="fas fa-times" />
-      </Link>
-      <div className="mb-3 tc">Confirma tu dirección de email.</div>
-      <form>
-        <div className="input-field" style={inputEmailModal}>
-          <Input
-            id="email"
-            type="text"
-            className="validate"
-            placeholder="eg. nombre@dominio.com"
-          />
-          <label htmlFor="email">Correo Electrónico *</label>
-        </div>
-      </form>
-      <div className="p9 t-semibold">Los campos con (*) son obligatorios.</div>
-    </div>
-    <div className="modal-footer tc">
-      <Link
-        to="#!"
-        className=" modal-action modal-close btn waves-effect waves-light t-semibold"
-      >
-        Recuperar contraseña
-      </Link>
-    </div>
-  </div>
-);
 
 // Clase que contiene la interfaz de login
 class Login extends Component {
-  componentDidMount() {
-    M.AutoInit();
-  }
   render() {
     return (
       <div>
@@ -155,7 +116,7 @@ class Login extends Component {
           </section>
         </section>
         {/* Modal temporal */}
-        {modalLogin}
+        <ForgotPassModal />
       </div>
     );
   }

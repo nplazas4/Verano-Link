@@ -4,7 +4,6 @@ import Footer from "../components/Footer";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import ExitososFallidos from "../components/charts/ExitososFallidos";
 import TransInterfaz from "../components/charts/TransInterfaz";
-import M from "materialize-css";
 
 class Dashboard extends Component {
   state = {
@@ -19,7 +18,6 @@ class Dashboard extends Component {
     };
   }
   componentDidMount() {
-    M.AutoInit();
     this.fetchDashboards();
   }
 

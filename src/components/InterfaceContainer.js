@@ -21,18 +21,17 @@ class InterfaceContainer extends Component {
                       </div>
                     </div>
                     <div>
-                      {!this.props.skeleton ? (
-                        // {/* REVISAR */}
-                        <a
-                          className="dropdown-trigger"
-                          href="#!"
-                          data-target="Array"
-                        >
-                          <div className="btn-options">
-                            <i className="p13 fas fa-ellipsis-v"></i>
-                          </div>
-                        </a>
-                      ) : null}
+                      {/* {this.props.skeleton ? null : ( */}
+                      <a
+                        className="dropdown-trigger"
+                        href="#!"
+                        data-target="Array"
+                      >
+                        <div className="btn-options">
+                          <i className="p13 fas fa-ellipsis-v"></i>
+                        </div>
+                      </a>
+                      {/* )} */}
                       {/* REVISAR - CONTENIDO OPERCIONES */}
                       <ul id="Array" className="dropdown-content">
                         <li>

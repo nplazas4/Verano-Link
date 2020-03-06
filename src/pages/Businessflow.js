@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import BussinessFlowContainer from "../components/BusinessFlowContainer";
-import M from "materialize-css";
 
 class Businessflow extends Component {
   state = {};
@@ -46,7 +45,6 @@ class Businessflow extends Component {
     };
   }
   componentDidMount() {
-    M.AutoInit();
     this.fetchBusiness();
   }
   fetchBusiness = async () => {

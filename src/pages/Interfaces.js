@@ -3,13 +3,12 @@ import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Search from "../components/Search";
-import FilterPanel from "../components/FilterPanel";
+import InterfaceFilterPanel from "../components/InterfaceFilterPanel";
 import InterfaceContainer from "../components/InterfaceContainer";
 import Pagination from "../components/Pagination";
 import InterfaceModalFilter from "../components/InterfaceModalFilter";
 import MobileFilter from "../components/MobileFilters";
 import InterfaceNewProg from "../components/InterfaceNewProg";
-import M from "materialize-css";
 
 class Interfaces extends Component {
   state = {
@@ -110,7 +109,6 @@ class Interfaces extends Component {
     };
   }
   componentDidMount() {
-    M.AutoInit();
     this.fetchCharacters();
   }
   fetchCharacters = async () => {
@@ -129,6 +127,7 @@ class Interfaces extends Component {
       });
     }
   };
+
   render() {
     return (
       <div>
@@ -184,7 +183,7 @@ class Interfaces extends Component {
                     )}
                   </div>
                 </div>
-                <FilterPanel />
+                <InterfaceFilterPanel />
               </div>
             </div>
             {/* Paginator */}

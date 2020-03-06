@@ -5,7 +5,6 @@ import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ProviderContainer from "../components/ProviderContainer";
-import M from "materialize-css";
 
 class Providers extends Component {
   state = {
@@ -49,7 +48,6 @@ class Providers extends Component {
     };
   }
   componentDidMount() {
-    M.AutoInit();
     this.fetchProvider();
   }
   fetchProvider = async () => {
