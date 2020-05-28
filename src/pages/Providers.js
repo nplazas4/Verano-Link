@@ -1,16 +1,18 @@
-import React, { Component } from "react";
-import logoP6 from "../images/oracleP6.png";
-import logoUnifier from "../images/oracle1.png";
-import Navbar from "../components/Navbar";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import ProviderContainer from "../components/ProviderContainer";
+import React, { Component } from 'react';
+import logoP6 from '../images/oracleP6.png';
+import logoUnifier from '../images/oracle1.png';
+import logoEBS from '../images/logo_EBS.jpg';
+import logoSAP from '../images/logo_SAP.jpg';
+import Navbar from '../components/Navbar';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import ProviderContainer from '../components/ProviderContainer';
 
 class Providers extends Component {
   state = {
     loading: true,
     error: null,
-    data: undefined
+    data: undefined,
   };
   constructor(props) {
     super(props);
@@ -20,31 +22,31 @@ class Providers extends Component {
       list: {
         results: [
           {
-            id: "1",
-            name: "P6 EPPM",
+            id: '1',
+            name: 'P6 EPPM',
             logo: logoP6,
-            interface: "10"
+            interface: '10',
           },
           {
-            id: "2",
-            name: "UNIFIER",
+            id: '2',
+            name: 'UNIFIER',
             logo: logoUnifier,
-            interface: "11"
+            interface: '11',
           },
           {
-            id: "3",
-            name: "SAP",
-            logo: "",
-            interface: "12"
+            id: '3',
+            name: 'SAP',
+            logo: logoSAP,
+            interface: '12',
           },
           {
-            id: "4",
-            name: "EBS",
-            logo: "",
-            interface: "13"
-          }
-        ]
-      }
+            id: '4',
+            name: 'EBS',
+            logo: logoEBS,
+            interface: '13',
+          },
+        ],
+      },
     };
   }
   componentDidMount() {
@@ -54,16 +56,16 @@ class Providers extends Component {
     this.setState({ loading: true, error: null });
     try {
       const response = await fetch(
-        "https://www.breakingbadapi.com/api/characters"
+        'https://www.breakingbadapi.com/api/characters'
       );
       const data = await response.json();
       this.setState({
-        loading: false
+        loading: false,
       });
     } catch (error) {
       this.setState({
         loading: false,
-        error: error
+        error: error,
       });
     }
   };
@@ -71,13 +73,13 @@ class Providers extends Component {
     return (
       <React.Fragment>
         <Navbar />
-        <section className="col l10 m12 s12  offset-l2 relative">
-          <Header title="Proveedores" urlContext="proveedores" />
-          <div className="container-page">
-            <div className="row">
-              <div className="col l12 m12 s12">
-                <div className="row">
-                  <div className="col l9">
+        <section className='col l10 m12 s12  offset-l2 relative'>
+          <Header title='Proveedores' urlContext='proveedores' />
+          <div className='container-page'>
+            <div className='row'>
+              <div className='col l12 m12 s12'>
+                <div className='row'>
+                  <div className='col l9'>
                     Selecciona alguna de los siguientes proveedores para
                     configurar una nueva conexión.
                   </div>
@@ -86,7 +88,7 @@ class Providers extends Component {
               {this.state.loading === true ? (
                 <ProviderContainer
                   providers={this.state.list.results}
-                  skeleton="true"
+                  skeleton='true'
                 />
               ) : (
                 <ProviderContainer providers={this.state.list.results} />
